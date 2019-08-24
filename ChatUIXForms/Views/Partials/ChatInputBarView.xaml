@@ -12,6 +12,9 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
+         <StackLayout Orientation="Horizontal">
+        <ImageButton WidthRequest="40" Source="mic.png"/>
+        <ImageButton WidthRequest="40" Source="speaker.png"/>
         <controls:ExtendedEditorControl x:Name="chatTextInput" 
                  Text="{Binding TextToSend}" 
                  Margin="1"  
@@ -23,15 +26,13 @@
                  Placeholder="Type your message here"
                  Grid.Row="0" 
                  Grid.Column="0" />
-        <Label Text="Send"
-               Grid.Row="0"
-               Grid.Column="1"
-               VerticalTextAlignment="Center">
-            <Label.GestureRecognizers> 
-                <TapGestureRecognizer
-                      Command="{Binding OnSendCommand}"
-                      Tapped="Handle_Completed"/>
-           </Label.GestureRecognizers>
-       </Label>
+
+         </StackLayout>
+         <ImageButton
+             Grid.Row="0"
+             Grid.Column="1"
+             Source="send.png"
+              Command="{Binding OnSendCommand}"
+             Clicked="Handle_Completed"/>
     </Grid>
 </ContentView>

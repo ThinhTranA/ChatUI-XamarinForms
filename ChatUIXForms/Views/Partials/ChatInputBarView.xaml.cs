@@ -20,6 +20,8 @@ namespace ChatUIXForms.Views.Partials
         {
             (this.Parent.Parent.BindingContext as ChatPageViewModel).OnSendCommand.Execute(null);
             chatTextInput.Focus();
+
+            UnFocusEntry();
         }
 
         public void UnFocusEntry(){
