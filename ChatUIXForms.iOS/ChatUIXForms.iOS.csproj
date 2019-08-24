@@ -176,5 +176,6 @@
     <BundleResource Include="Resources\speaker.png" />
     <BundleResource Include="Resources\mic.png" />
     <BundleResource Include="Resources\send.png" />
+    <BundleResource Include="Resources\expand.png" />
   </ItemGroup>
 </Project>
