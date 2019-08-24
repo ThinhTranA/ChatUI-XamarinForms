@@ -13,8 +13,17 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
          <StackLayout Orientation="Horizontal">
-        <ImageButton WidthRequest="40" Source="mic.png"/>
-        <ImageButton WidthRequest="40" Source="speaker.png"/>
+        <ImageButton
+            x:Name="expandButton"
+            Clicked="ExpandButton_Clicked"
+            Source="expand.png"/>
+
+        <ImageButton
+            x:Name="micButton"
+            WidthRequest="40" Source="mic.png"/>
+        <ImageButton
+            x:Name="speakerButton"
+            WidthRequest="40" Source="speaker.png"/>
         <controls:ExtendedEditorControl x:Name="chatTextInput" 
                  Text="{Binding TextToSend}" 
                  Margin="1"  
@@ -24,8 +33,16 @@
                  HorizontalOptions="FillAndExpand" 
                  PlaceholderColor="LightGray"
                  Placeholder="Type your message here"
+                                    BackgroundColor="Gray"
                  Grid.Row="0" 
-                 Grid.Column="0" />
+                 Grid.Column="0" >
+            <controls:ExtendedEditorControl.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="ChatTextInputTapped"
+                    />
+            </controls:ExtendedEditorControl.GestureRecognizers>
+        </controls:ExtendedEditorControl>
+             
 
          </StackLayout>
          <ImageButton
